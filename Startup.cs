@@ -9,28 +9,32 @@ namespace dotnet_vite_vuejs
 {
     public class Startup
     {
-        public Startup(WebApplicationBuilder builder, IWebHostEnvironment env) { }
+        private WebApplicationBuilder _builder;
+        public Startup(WebApplicationBuilder builder, IWebHostEnvironment env) {
+            this._builder = builder;
+        }
         public void Configure(WebApplication app, IWebHostEnvironment env)
         {
             app.UseRouting();
-            app.UseEndpoints((endpoint) =>
+            app.Map("",app =>
             {
-                endpoint.Map("/", async (context) =>
+                StaticFileOptions ClientApp = new StaticFileOptions
                 {
-                    await context.Response.WriteAsync("Hello W");
-                });
-            });
-            
-            app.UseStaticFiles(new StaticFileOptions
-            {
-                FileProvider = new PhysicalFileProvider(
+                    FileProvider = new PhysicalFileProvider(
                     Path.Combine(
-                        app.Environment.ContentRootPath, 
+                        this._builder.Environment.ContentRootPath,
                         "ClientApp/dist"
                         )
                     )
-                ,RequestPath = ""
-            });
+                };
+                app.UseStaticFiles(ClientApp);
+                app.UseSpa(spa =>
+                {
+                    spa.Options.DefaultPageStaticFileOptions = ClientApp;
+                });
+            } );
+
+            
         }
         public void ConfigureServices(IServiceCollection services)
         {
