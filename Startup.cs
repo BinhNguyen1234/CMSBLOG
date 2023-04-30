@@ -16,7 +16,17 @@ namespace dotnet_vite_vuejs
         public void Configure(WebApplication app, IWebHostEnvironment env)
         {
             app.UseRouting();
-            app.Map("",app =>
+            app.Map("/api",AppBuilder => {
+                AppBuilder.UseRouting();
+                AppBuilder.UseEndpoints(endpoints =>
+            {
+                endpoints.MapGet("", async context =>
+                {
+                   await context.Response.WriteAsync("Api");
+                });
+            });
+            });
+            app.Map("*",app =>
             {
                 StaticFileOptions ClientApp = new StaticFileOptions
                 {
