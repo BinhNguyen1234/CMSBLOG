@@ -7,10 +7,6 @@ namespace dotnet_vite_vuejs.Model
 	[Table("SanPham")]
 	public class Product
 	{
-		public Product()
-		{
-		
-		}
 		[Key]
 		public int ProductId { get; set; }
 		[Required]
@@ -22,11 +18,12 @@ namespace dotnet_vite_vuejs.Model
 	public class ProductContext : DbContext
 	{
 		public DbSet<Product> product { set; get; }
-		private string connectionString = @"hostname=cmsblog123.mysql.database.azure.comusername=binhnguyenpassword=M@roen4eessl-mode=require";
+		private string connectionString = @"Server=cmsblog123.mysql.database.azure.com;Database=cms;Uid=binhnguyen;Pwd=M@roen4ee;";
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-			optionsBuilder.UseSqlServer(connectionString);
+			optionsBuilder.UseMySQL(connectionString);
         }
     }
 
