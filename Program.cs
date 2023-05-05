@@ -17,13 +17,8 @@ namespace dotnet_vite_vuejs
             startup.ConfigureServices(builder.Services);
             var app = builder.Build();
             startup.Configure(app, app.Environment);
-<<<<<<< HEAD
             app.Run();
 
-=======
-            app.Run();
-          
->>>>>>> becaa1c37634548212367ac51719e62547c5a39f
         }
         private static WebApplicationBuilder createWebBuilder(string[] args)
         {
