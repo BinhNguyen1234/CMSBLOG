@@ -16,17 +16,23 @@ namespace dotnet_vite_vuejs
         public void Configure(WebApplication app, IWebHostEnvironment env)
         {
             app.UseRouting();
-            app.Map("/api",AppBuilder => {
-                AppBuilder.UseRouting();
-                AppBuilder.UseEndpoints(endpoints =>
+            app.Map("/api",app => {
+              
+                app.UseRouting();
+                app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllers();
                 endpoints.MapGet("", async context =>
                 {
-                   await context.Response.WriteAsync("Api");
+                   await context.Response.WriteAsync("rootAPi");
+                });
+                endpoints.MapGet("/12", async context =>
+                {
+                    await context.Response.WriteAsync("12");
                 });
             });
             });
-            app.Map("*",app =>
+            app.Map("",app =>
             {
                 StaticFileOptions ClientApp = new StaticFileOptions
                 {
@@ -43,12 +49,13 @@ namespace dotnet_vite_vuejs
                     spa.Options.DefaultPageStaticFileOptions = ClientApp;
                 });
             } );
-
+            
+            
             
         }
         public void ConfigureServices(IServiceCollection services)
         {
-           
+            services.AddControllers();
         }
     }
 }
