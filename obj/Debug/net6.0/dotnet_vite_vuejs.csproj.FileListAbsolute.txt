@@ -91,6 +91,25 @@
 /Users/apple/Documents/binh/CMSBLOG/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
 /Users/apple/Documents/binh/CMSBLOG/bin/Debug/net6.0/runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll
 /Users/apple/Documents/binh/CMSBLOG/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll
+<<<<<<< HEAD
+/Users/apple/Documents/binh/CMSBLOG/bin/Debug/net6.0/Microsoft.Extensions.Configuration.dll
+/Users/apple/Documents/binh/CMSBLOG/bin/Debug/net6.0/Microsoft.Extensions.Configuration.Binder.dll
+/Users/apple/Documents/binh/CMSBLOG/bin/Debug/net6.0/Microsoft.Extensions.Logging.Configuration.dll
+/Users/apple/Documents/binh/CMSBLOG/bin/Debug/net6.0/Microsoft.Extensions.Logging.Console.dll
+/Users/apple/Documents/binh/CMSBLOG/bin/Debug/net6.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll
+/Users/apple/Documents/binh/CMSBLOG/bin/Debug/net6.0/BouncyCastle.Crypto.dll
+/Users/apple/Documents/binh/CMSBLOG/bin/Debug/net6.0/Google.Protobuf.dll
+/Users/apple/Documents/binh/CMSBLOG/bin/Debug/net6.0/K4os.Compression.LZ4.dll
+/Users/apple/Documents/binh/CMSBLOG/bin/Debug/net6.0/K4os.Compression.LZ4.Streams.dll
+/Users/apple/Documents/binh/CMSBLOG/bin/Debug/net6.0/K4os.Hash.xxHash.dll
+/Users/apple/Documents/binh/CMSBLOG/bin/Debug/net6.0/MySql.Data.dll
+/Users/apple/Documents/binh/CMSBLOG/bin/Debug/net6.0/Ubiety.Dns.Core.dll
+/Users/apple/Documents/binh/CMSBLOG/bin/Debug/net6.0/Zstandard.Net.dll
+/Users/apple/Documents/binh/CMSBLOG/bin/Debug/net6.0/MySql.Data.EntityFrameworkCore.dll
+/Users/apple/Documents/binh/CMSBLOG/bin/Debug/net6.0/Renci.SshNet.dll
+/Users/apple/Documents/binh/CMSBLOG/bin/Debug/net6.0/SshNet.Security.Cryptography.dll
+/Users/apple/Documents/binh/CMSBLOG/bin/Debug/net6.0/System.Xml.XPath.XmlDocument.dll
+=======
 D:\binh\Vite_Vue_Dotnet\dotnet_vite_vuejs\bin\Debug\net6.0\appsettings.Development.json
 D:\binh\Vite_Vue_Dotnet\dotnet_vite_vuejs\bin\Debug\net6.0\appsettings.json
 D:\binh\Vite_Vue_Dotnet\dotnet_vite_vuejs\bin\Debug\net6.0\ClientApp\package-lock.json
@@ -184,3 +203,4 @@ D:\binh\Vite_Vue_Dotnet\dotnet_vite_vuejs\obj\Debug\net6.0\refint\dotnet_vite_vu
 D:\binh\Vite_Vue_Dotnet\dotnet_vite_vuejs\obj\Debug\net6.0\dotnet_vite_vuejs.pdb
 D:\binh\Vite_Vue_Dotnet\dotnet_vite_vuejs\obj\Debug\net6.0\dotnet_vite_vuejs.genruntimeconfig.cache
 D:\binh\Vite_Vue_Dotnet\dotnet_vite_vuejs\obj\Debug\net6.0\ref\dotnet_vite_vuejs.dll
+>>>>>>> 9d39a8e8f7395c2546843da1b5464effa0b059c4

@@ -10,15 +10,20 @@ namespace dotnet_vite_vuejs
 {
     public class Program
     {
-        public static async Task Main(string[] args)
+        public static void Main(string[] args)
         {
             var builder = createWebBuilder(args);
             var startup = new Startup(builder, builder.Environment);
             startup.ConfigureServices(builder.Services);
             var app = builder.Build();
             startup.Configure(app, app.Environment);
+<<<<<<< HEAD
             app.Run();
 
+=======
+            app.Run();
+          
+>>>>>>> becaa1c37634548212367ac51719e62547c5a39f
         }
         private static WebApplicationBuilder createWebBuilder(string[] args)
         {

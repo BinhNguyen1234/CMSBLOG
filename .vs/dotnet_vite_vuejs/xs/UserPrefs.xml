@@ -1,28 +1,26 @@
 ﻿<Properties StartupConfiguration="{E6481E67-943F-44D8-B125-295E72EA2C61}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Model/Product.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
     <Files>
-      <File FileName="Program.cs" Line="28" Column="12" />
-      <File FileName="Startup.cs" Line="27" Column="26" />
-      <File FileName="Model/EmptyClass.cs" Line="28" Column="48" />
-      <File FileName="appsettings.json" Line="11" Column="18" />
+      <File FileName="Program.cs" Line="15" Column="44" />
+      <File FileName="Startup.cs" />
+      <File FileName="appsettings.json" />
+      <File FileName="Model/Product.cs" Line="17" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="dotnet_vite_vuejs" expanded="True">
             <Node name="dotnet_vite_vuejs" expanded="True">
-              <Node name="Model" expanded="True">
-                <Node name="Product.cs" selected="True" />
-              </Node>
               <Node name="appsettings.json" expanded="True" />
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.dotnet__vite__vuejs PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
