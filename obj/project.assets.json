@@ -8259,26 +8259,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\binh.nguyenv\\.nuget\\packages\\": {}
+    "/Users/apple/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\binh\\Vite_Vue_Dotnet\\dotnet_vite_vuejs\\dotnet_vite_vuejs.csproj",
+      "projectUniqueName": "/Users/apple/Documents/binh/CMSBLOG/dotnet_vite_vuejs.csproj",
       "projectName": "dotnet_vite_vuejs",
-      "projectPath": "D:\\binh\\Vite_Vue_Dotnet\\dotnet_vite_vuejs\\dotnet_vite_vuejs.csproj",
-      "packagesPath": "C:\\Users\\binh.nguyenv\\.nuget\\packages\\",
-      "outputPath": "D:\\binh\\Vite_Vue_Dotnet\\dotnet_vite_vuejs\\obj\\",
+      "projectPath": "/Users/apple/Documents/binh/CMSBLOG/dotnet_vite_vuejs.csproj",
+      "packagesPath": "/Users/apple/.nuget/packages/",
+      "outputPath": "/Users/apple/Documents/binh/CMSBLOG/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\binh.nguyenv\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/apple/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -8347,24 +8345,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.16, 6.0.16]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.16, 6.0.16]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.16, 6.0.16]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.16, 6.0.16]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -8373,16 +8353,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.105\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.203/RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file D:\\binh\\Vite_Vue_Dotnet\\dotnet_vite_vuejs\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
