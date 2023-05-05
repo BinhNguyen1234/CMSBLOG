@@ -204,3 +204,20 @@ D:\binh\Vite_Vue_Dotnet\dotnet_vite_vuejs\obj\Debug\net6.0\dotnet_vite_vuejs.pdb
 D:\binh\Vite_Vue_Dotnet\dotnet_vite_vuejs\obj\Debug\net6.0\dotnet_vite_vuejs.genruntimeconfig.cache
 D:\binh\Vite_Vue_Dotnet\dotnet_vite_vuejs\obj\Debug\net6.0\ref\dotnet_vite_vuejs.dll
 >>>>>>> 9d39a8e8f7395c2546843da1b5464effa0b059c4
+D:\binh\Vite_Vue_Dotnet\dotnet_vite_vuejs\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+D:\binh\Vite_Vue_Dotnet\dotnet_vite_vuejs\bin\Debug\net6.0\Google.Protobuf.dll
+D:\binh\Vite_Vue_Dotnet\dotnet_vite_vuejs\bin\Debug\net6.0\K4os.Compression.LZ4.dll
+D:\binh\Vite_Vue_Dotnet\dotnet_vite_vuejs\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
+D:\binh\Vite_Vue_Dotnet\dotnet_vite_vuejs\bin\Debug\net6.0\K4os.Hash.xxHash.dll
+D:\binh\Vite_Vue_Dotnet\dotnet_vite_vuejs\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+D:\binh\Vite_Vue_Dotnet\dotnet_vite_vuejs\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Binder.dll
+D:\binh\Vite_Vue_Dotnet\dotnet_vite_vuejs\bin\Debug\net6.0\Microsoft.Extensions.Logging.Configuration.dll
+D:\binh\Vite_Vue_Dotnet\dotnet_vite_vuejs\bin\Debug\net6.0\Microsoft.Extensions.Logging.Console.dll
+D:\binh\Vite_Vue_Dotnet\dotnet_vite_vuejs\bin\Debug\net6.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+D:\binh\Vite_Vue_Dotnet\dotnet_vite_vuejs\bin\Debug\net6.0\MySql.Data.dll
+D:\binh\Vite_Vue_Dotnet\dotnet_vite_vuejs\bin\Debug\net6.0\Ubiety.Dns.Core.dll
+D:\binh\Vite_Vue_Dotnet\dotnet_vite_vuejs\bin\Debug\net6.0\Zstandard.Net.dll
+D:\binh\Vite_Vue_Dotnet\dotnet_vite_vuejs\bin\Debug\net6.0\MySql.Data.EntityFrameworkCore.dll
+D:\binh\Vite_Vue_Dotnet\dotnet_vite_vuejs\bin\Debug\net6.0\Renci.SshNet.dll
+D:\binh\Vite_Vue_Dotnet\dotnet_vite_vuejs\bin\Debug\net6.0\SshNet.Security.Cryptography.dll
+D:\binh\Vite_Vue_Dotnet\dotnet_vite_vuejs\bin\Debug\net6.0\System.Xml.XPath.XmlDocument.dll

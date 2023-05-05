@@ -27,13 +27,4 @@ namespace dotnet_vite_vuejs
         }
     }
 
-}//thấy chưa
-// gì v 3 :V
-// này app nghich chơi thoi
-// vô xem git changes chi :v
-// vo coi xoa gi ma no bi loi =))
-// không có xóa gì hết :v
-
-// nay lỡ add MVC, controller vô nên mới phát hiện ra lỗi :v
-// chứ xóa dòng đó đi app chạy bth\
-// -_-
+}
