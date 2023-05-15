@@ -3,9 +3,9 @@ namespace dotnet_vite_vuejs.Controllers
 {
     public class TestController : Controller
     {
-        IActionResult Index()
+        public IActionResult aa()
         {
-            return Content("test api");
+            return Content("test apffffffff");
         }
     }
 }

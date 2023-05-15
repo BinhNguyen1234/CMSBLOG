@@ -21,7 +21,7 @@ namespace dotnet_vite_vuejs
                 app.UseRouting();
                 app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllerRoute(name: "default", pattern: "{controller=Test}/{action=Index}/{id?}");
                 endpoints.MapGet("", async context =>
                 {
                    await context.Response.WriteAsync("rootAPi");
@@ -54,7 +54,7 @@ namespace dotnet_vite_vuejs
             
         }
         public void ConfigureServices(IServiceCollection services)
-        {
+        {   
             services.AddControllers();
         }
     }
