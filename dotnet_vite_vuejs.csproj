@@ -4,7 +4,8 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>disable</ImplicitUsings>
-	  <SpaRoot>ClientApp\</SpaRoot>
+	<SpaRoot>ClientApp\</SpaRoot>
+	<DistFolder>ClientApp\dist\**</DistFolder>
   </PropertyGroup>
 	<Target Name="DebugEnsureNodeEnv" BeforeTargets="Build">
 		<!-- Ensure Node.js is installed -->
@@ -13,18 +14,28 @@
 		</Exec>
 		<Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
 		<Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
-		<Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
-		<Exec WorkingDirectory="$(SpaRoot)" Command="npm run build" />
+		<Message Importance="high" Text="Please wait" />
+		<Exec WorkingDirectory="$(SpaRoot)"   Command="npm run build"  ContinueOnError="true">
+			<Output TaskParameter="ExitCode"  PropertyName="ErrorRunDev" />
+		</Exec>
+
+		<Error Condition="'$(ErrorRunDev)'!='0'" ContinueOnError="true"  Text="Error when building ClientApp, trying again with install node_module....."></Error>
+		<!--<Error Condition="'$(ErrorRunDev)'!= '0'" Text="Error when run build"></Error>-->
+		<!--<Exec Condition="'$(ErrorRunDev)'!= '0'" WorkingDirectory="$(SpaRoot)" Command="npm install">
+		</Exec>-->
+		<OnError ExecuteTargets="'$(Test)'"/>
+		<!--<Exec  Condition="'$(InstallDone)' != '0'" WorkingDirectory="$(SpaRoot)" Command="npm run build"></Exec>-->
+		
 	</Target>
+	<Target BeforeTargets="DebugEnsureNodeEnv" Name="Test">
+		<Message Importance="high" Text="123213213123123123123123"></Message>
+	</Target>
+
 	<ItemGroup>
-		<DistFiles Include="$(SpaRoot)dist\**; $(SpaRoot)dist-server\**" />
-		<ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
-			<RelativePath>%(DistFiles.Identity)</RelativePath>
-			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-		</ResolvedFileToPublish>
+		<Content Include="$(DistFolder)" CopyToOutputDirectory="Always"></Content>
 	</ItemGroup>
+
   <ItemGroup>
-    <Folder Include="ClientApp\" />
     <Folder Include="Model\" />
   </ItemGroup>
     
@@ -44,7 +55,4 @@
     <PackageReference Include="Vite.AspNetCore" Version="1.5.3" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Remove="Model\" />
-  </ItemGroup>
 </Project>
