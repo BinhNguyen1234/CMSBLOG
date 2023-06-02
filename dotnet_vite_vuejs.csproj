@@ -20,24 +20,24 @@
 			<Output TaskParameter="ExitCode" PropertyName="ResultCheckNodeVersion"></Output>
 		</Exec>
 		<Error Condition="'$(ResultCheckNodeVersion)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
-		<CallTarget Targets="NodeRunBuild"></CallTarget>
+		<CallTarget Targets="NodeRunInstall"></CallTarget>
 </Target>
 	 <!--Run build--> 
-	<!--<Target Condition="$(IsErrorBefore) &lt;= 1" AfterTargets="Build" Name="NodeRunBuild">
+	<Target Condition="$(IsErrorBefore) &lt;= 1" AfterTargets="Build" Name="NodeRunInstall">
 		
 		<Message Importance="high" Text="Npm run build is executing..."></Message>
 		<Message Importance="high" Text="Please wait..." />
 		
 		<Exec WorkingDirectory="$(SpaRoot)" Command="npm install" ContinueOnError="true">
-			<Output TaskParameter="ExitCode" PropertyName="ResultNodeRunBuild" />
+			<Output TaskParameter="ExitCode" PropertyName="ResultNodeRunInstall" />
 		</Exec>
 		
-		<Message Importance="high" Condition="'$(ResultNodeRunBuild)'!='0'" Text="Error when installing node_module....."></Message>
+		<Message Importance="high" Condition="'$(ResultNodeRunInstall)'!='0'" Text="Error when installing node_module....."></Message>
 		
-	</Target>-->
-	<!--<ItemGroup>
+	</Target>
+	<ItemGroup>
 		<Content Include="$(DistFolder)" CopyToOutputDirectory="Always"></Content>
-	</ItemGroup>-->
+	</ItemGroup>
 
   <ItemGroup>
 		<Folder Include="Model\" />
