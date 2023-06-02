@@ -18,7 +18,6 @@ namespace dotnet_vite_vuejs
             var app = builder.Build();
             startup.Configure(app, app.Environment);
             app.Run();
-
         }
         private static WebApplicationBuilder createWebBuilder(string[] args)
         {
@@ -26,5 +25,4 @@ namespace dotnet_vite_vuejs
             return builder;
         }
     }
-
 }
