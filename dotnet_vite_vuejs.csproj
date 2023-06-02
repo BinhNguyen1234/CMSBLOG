@@ -6,63 +6,45 @@
 	<ImplicitUsings>disable</ImplicitUsings>
 	<SpaRoot>ClientApp\</SpaRoot>
 	<DistFolder>ClientApp\dist\**</DistFolder>
-	<CountErrorWhenBuild>0</CountErrorWhenBuild>
 	<IsErrorBefore>0</IsErrorBefore>
-	<ShouldRebuild></ShouldRebuild>
+	<FrontEndDebugPorrt>8000</FrontEndDebugPorrt>
+	<SpaProxyLaunchCommand>npm run dev -- --port $(FrontEndDebugPorrt)</SpaProxyLaunchCommand>
+	<DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
+	<SpaProxyServerUrl>http://localhost:$(FrontEndDebugPorrt)</SpaProxyServerUrl>
+	
   </PropertyGroup>
-	
-	
-	<Target Name="CheckNodeVerion" BeforeTargets="Build">
-		<!-- Ensure Node.js is installed -->
+<Target Name="CheckNodeVerion" BeforeTargets="Build">
+		 <!--Ensure Node.js is installed--> 
 		<Message Importance="high" Text="Checking node version ....."></Message>
 		<Exec Command="node --version" ContinueOnError="true">
 			<Output TaskParameter="ExitCode" PropertyName="ResultCheckNodeVersion"></Output>
 		</Exec>
 		<Error Condition="'$(ResultCheckNodeVersion)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
 		<CallTarget Targets="NodeRunBuild"></CallTarget>
-	</Target>
-	<!-- Run build -->
-	<Target Condition="$(IsErrorBefore) &lt;= 1"  Name="NodeRunBuild" >
+</Target>
+	 <!--Run build--> 
+	<!--<Target Condition="$(IsErrorBefore) &lt;= 1" AfterTargets="Build" Name="NodeRunBuild">
 		
 		<Message Importance="high" Text="Npm run build is executing..."></Message>
 		<Message Importance="high" Text="Please wait..." />
 		
-		<Exec WorkingDirectory="$(SpaRoot)" Command="npm run build" ContinueOnError="true">
+		<Exec WorkingDirectory="$(SpaRoot)" Command="npm install" ContinueOnError="true">
 			<Output TaskParameter="ExitCode" PropertyName="ResultNodeRunBuild" />
 		</Exec>
 		
-		<Message Importance="high" Condition="'$(ResultNodeRunBuild)'!='0'"  Text="Error when building ClientApp, trying again with install node_module....."></Message>
-		<CallTarget Targets="SetValueForIsErrorWhenBuildProperty"></CallTarget>
-		<CallTarget Condition="$(ResultNodeRunBuild) != '0'" Targets="SetValueForIsErrorWhenBuildProperty"></CallTarget>
-		<CallTarget Condition="$(ResultNodeRunBuild) != '0'" Targets="HandleErrorWhenNodeModuleNotExist"></CallTarget>
+		<Message Importance="high" Condition="'$(ResultNodeRunBuild)'!='0'" Text="Error when installing node_module....."></Message>
 		
-	</Target>
-	
-	<!-- Run install if run build failed -->
-	<Target  Name="HandleErrorWhenNodeModuleNotExist" Returns="">
-		<Message Importance="high" Text="npm installing..."></Message>
-		<Exec WorkingDirectory="$(SpaRoot)" Command="npm install">
-			<Output TaskParameter="ExitCode" PropertyName="IsError" />
-		</Exec>
-		<Message Importance="high" Text="Is Errorbefore: $(IsErrorBefore)"/>
-		<CallTarget Condition="$(IsError) == '0'" Targets="SetValueForIsErrorWhenBuildProperty"/>
-	</Target>
-
-	<!-- Flag for error when build error-->
-	<Target Name="SetValueForIsErrorWhenBuildProperty">
-		<CreateProperty Value="$([MSBuild]::Add($(IsErrorBefore),1))">
-			<Output TaskParameter="Value" PropertyName="IsErrorBefore"/>
-		</CreateProperty>
-	</Target>
-	<ItemGroup>
+	</Target>-->
+	<!--<ItemGroup>
 		<Content Include="$(DistFolder)" CopyToOutputDirectory="Always"></Content>
-	</ItemGroup>
+	</ItemGroup>-->
 
   <ItemGroup>
 		<Folder Include="Model\" />
   </ItemGroup>
 	
-  <ItemGroup>
+  <ItemGroup>	
+	<PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="6.0.11" />	
 	<PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="6" />
 	<PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
 	<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.5">

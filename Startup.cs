@@ -32,23 +32,24 @@ namespace dotnet_vite_vuejs
                 });
             });
             });
-            app.Map("",app =>
-            {
-                StaticFileOptions ClientApp = new StaticFileOptions
-                {
-                    FileProvider = new PhysicalFileProvider(
-                    Path.Combine(
-                        this._builder.Environment.ContentRootPath,
-                        "ClientApp/dist"
-                        )
-                    )
-                };
-                app.UseStaticFiles(ClientApp);
-                app.UseSpa(spa =>
-                {
-                    spa.Options.DefaultPageStaticFileOptions = ClientApp;
-                });
-            } );
+            app.UseStaticFiles();
+            //app.Map("",app =>
+            //{
+            //    StaticFileOptions ClientApp = new StaticFileOptions
+            //    {
+            //        FileProvider = new PhysicalFileProvider(
+            //        Path.Combine(
+            //            this._builder.Environment.ContentRootPath,
+            //            "ClientApp/dist"
+            //            )
+            //        )
+            //    };
+            //    app.UseStaticFiles(ClientApp);
+            //    app.UseSpa(spa =>
+            //    {
+            //        spa.Options.DefaultPageStaticFileOptions = ClientApp;
+            //    });
+            //} );
             
             
             
