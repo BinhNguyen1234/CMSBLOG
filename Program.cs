@@ -6,6 +6,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using System.IO;
+using System.Configuration;
+
 namespace dotnet_vite_vuejs
 {
     public class Program
@@ -21,7 +25,11 @@ namespace dotnet_vite_vuejs
         }
         private static WebApplicationBuilder createWebBuilder(string[] args)
         {
+
             var builder = WebApplication.CreateBuilder(args);
+            builder.Configuration
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: false);
             return builder;
         }
     }
