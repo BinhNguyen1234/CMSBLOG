@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 	<!--General-->
-	<PropertyGroup >
+	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>disable</ImplicitUsings>
@@ -11,7 +11,7 @@
 	<!--For Debug-->
 	<PropertyGroup Condition="$(ModeBuild)=='Debug'">
 		<FrontEndDebugPort>8000</FrontEndDebugPort>
-		<SpaProxyLaunchCommand>npm run dev --trace-warnings -- --strictPort --debug --port $(FrontEndDebugPort)</SpaProxyLaunchCommand>
+		<SpaProxyLaunchCommand>npm run dev -- --strictPort --debug --port $(FrontEndDebugPort)</SpaProxyLaunchCommand>
 		<DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
 		<SpaProxyServerUrl>https://localhost:$(FrontEndDebugPort)</SpaProxyServerUrl>
 	</PropertyGroup>
@@ -25,7 +25,7 @@
 		</Exec>
 		<Error Condition="'$(ResultCheckNodeVersion)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
 	</Target>
-	<Target DependsOnTargets="CheckNodeVerion" Name="NodeRunInstall">
+	<Target AfterTargets="CheckNodeVerion" Name="NodeRunInstall">
 		<!--Run install-->
 		<Message Importance="high" Text="Npm run install is executing..."></Message>
 		<Message Importance="high" Text="Please wait..." />
@@ -49,11 +49,11 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>
-		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5"/>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
-		<PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0"/>
-		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="7.0.0"/>
-		<PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.22"/>
-		<PackageReference Include="System.Data.SqlClient" Version="4.8.5"/>
+		<PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="7.0.0" />
+		<PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.22" />
+		<PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
 	</ItemGroup>
 </Project>
