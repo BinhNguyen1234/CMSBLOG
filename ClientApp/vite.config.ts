@@ -1,9 +1,12 @@
 import { defineConfig, loadEnv } from 'vite'
+import basicSsl from '@vitejs/plugin-basic-ssl'
 import vue from '@vitejs/plugin-vue'
-import dotenv from 'dotenv'
+let a = process.env;
 // https://vitejs.dev/config/
-const config = dotenv.config();
 export default defineConfig({
-    plugins: [vue()]
+    plugins: [vue(), basicSsl()],
+    server: {
+        https: true
+    }
 })
-console.debug('[vite] connecting...', config.parsed);
+console.debug('[vite] connecting...', a);

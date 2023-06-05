@@ -11,9 +11,9 @@
 	<!--For Debug-->
 	<PropertyGroup Condition="$(ModeBuild)=='Debug'">
 		<FrontEndDebugPort>8000</FrontEndDebugPort>
-		<SpaProxyLaunchCommand>npm run dev -- --strictPort --debug  --port $(FrontEndDebugPort)</SpaProxyLaunchCommand>
+		<SpaProxyLaunchCommand>npm run dev --trace-warnings -- --strictPort --debug --port $(FrontEndDebugPort)</SpaProxyLaunchCommand>
 		<DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
-		<SpaProxyServerUrl>http://localhost:$(FrontEndDebugPort)</SpaProxyServerUrl>
+		<SpaProxyServerUrl>https://localhost:$(FrontEndDebugPort)</SpaProxyServerUrl>
 	</PropertyGroup>
 	<!--General-->
 	<Target Name="CheckNodeVerion" BeforeTargets="PrepareForBuild">

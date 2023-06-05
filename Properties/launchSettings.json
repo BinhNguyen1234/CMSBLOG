@@ -15,10 +15,7 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.SpaProxy"
-      },
-      "dotnetRunMessages": true,
-      "httpPort": 5191,
-      "sslPort": 7082
+      }
     },
     "run_release": {
       "commandName": "Project",

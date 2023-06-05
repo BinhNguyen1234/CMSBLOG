@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/node": "^20.2.5",
+    "@vitejs/plugin-basic-ssl": "^1.0.1",
     "dotenv": "^16.1.4",
     "vue": "^3.2.47"
   },
