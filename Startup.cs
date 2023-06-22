@@ -34,31 +34,27 @@ namespace dotnet_vite_vuejs
                 });
             });
             });
-
-            if (env.IsDevelopment())
+#if DEBUG
+#elif RELEASE
+            app.UseStaticFiles();
+            app.Map("", app =>
             {
-                app.UseStaticFiles();
-            }
-            else
-            {
-                app.Map("", app =>
+                StaticFileOptions ClientApp = new StaticFileOptions
                 {
-                    StaticFileOptions ClientApp = new StaticFileOptions
-                    {
-                        FileProvider = new PhysicalFileProvider(
-                        Path.Combine(
-                            this._builder.Environment.ContentRootPath,
-                            "ClientApp/dist"
-                            )
+                    FileProvider = new PhysicalFileProvider(
+                    Path.Combine(
+                        this._builder.Environment.ContentRootPath,
+                        "ClientApp/dist"
                         )
-                    };
-                    app.UseStaticFiles(ClientApp);
-                    app.UseSpa(spa =>
-                    {
-                        spa.Options.DefaultPageStaticFileOptions = ClientApp;
-                    });
+                    )
+                };
+                app.UseStaticFiles(ClientApp);
+                app.UseSpa(spa =>
+                {
+                    spa.Options.DefaultPageStaticFileOptions = ClientApp;
                 });
-            }
+            });
+#endif
         }
         public void ConfigureServices(IServiceCollection services)
         {

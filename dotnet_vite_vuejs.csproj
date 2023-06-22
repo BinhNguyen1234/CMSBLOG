@@ -8,8 +8,10 @@
 		<DistFolder>ClientApp\dist\**</DistFolder>
 		<ModeBuild>$(Configuration)</ModeBuild>
 	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'" />
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'" />
 	<!--For Debug-->
-	<PropertyGroup Condition="$(ModeBuild)=='Debug'">
+	<PropertyGroup Label="ForDebugMode" Condition="$(ModeBuild)=='Debug'">
 		<FrontEndDebugPort>8000</FrontEndDebugPort>
 		<SpaProxyLaunchCommand>npm run dev -- --strictPort --debug --port $(FrontEndDebugPort)</SpaProxyLaunchCommand>
 		<DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
@@ -25,7 +27,7 @@
 		</Exec>
 		<Error Condition="'$(ResultCheckNodeVersion)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
 	</Target>
-	<Target AfterTargets="CheckNodeVerion" Name="NodeRunInstall">
+	<Target Name="NodeRunInstall" AfterTargets="CheckNodeVerion">
 		<!--Run install-->
 		<Message Importance="high" Text="Npm run install is executing..."></Message>
 		<Message Importance="high" Text="Please wait..." />
@@ -33,6 +35,15 @@
 			<Output TaskParameter="ExitCode" PropertyName="ResultNodeRunInstall" />
 		</Exec>
 		<Message Importance="high" Condition="'$(ResultNodeRunInstall)'!='0'" Text="Error when installing node_module....."></Message>
+	</Target>
+	<Target Name="NodeRunBuild" AfterTargets="NodeRunInstall" Condition="$(ModeBuild)!='Debug'">
+		<!--Run install-->
+		<Message Importance="high" Text="Building front end is excuting..."></Message>
+		<Message Importance="high" Text="Please wait..." />
+		<Exec WorkingDirectory="$(SpaRoot)" Command="npm run build" ContinueOnError="true">
+			<Output TaskParameter="ExitCode" PropertyName="ResultNodeRunBuild" />
+		</Exec>
+		<Message Importance="high" Condition="'$(ResultNodeRunBuild)'!='0'" Text="Error when building front end"></Message>
 	</Target>
 	<!--For release-->
 	<ItemGroup Condition="$(Configuration) =='Release'">
