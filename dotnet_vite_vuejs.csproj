@@ -8,8 +8,6 @@
 		<DistFolder>ClientApp\dist\**</DistFolder>
 		<ModeBuild>$(Configuration)</ModeBuild>
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'" />
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'" />
 	<!--For Debug-->
 	<PropertyGroup Label="ForDebugMode" Condition="$(ModeBuild)=='Debug'">
 		<FrontEndDebugPort>8000</FrontEndDebugPort>
@@ -28,7 +26,7 @@
 		<Error Condition="'$(ResultCheckNodeVersion)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
 	</Target>
 	<Target Name="NodeRunInstall" AfterTargets="CheckNodeVerion">
-		<!--Run install-->
+		<!--Run install, run node package-->
 		<Message Importance="high" Text="Npm run install is executing..."></Message>
 		<Message Importance="high" Text="Please wait..." />
 		<Exec WorkingDirectory="$(SpaRoot)" Command="npm install" ContinueOnError="true">
@@ -37,7 +35,7 @@
 		<Message Importance="high" Condition="'$(ResultNodeRunInstall)'!='0'" Text="Error when installing node_module....."></Message>
 	</Target>
 	<Target Name="NodeRunBuild" AfterTargets="NodeRunInstall" Condition="$(ModeBuild)!='Debug'">
-		<!--Run install-->
+		<!--Run build front-end dist file-->
 		<Message Importance="high" Text="Building front end is excuting..."></Message>
 		<Message Importance="high" Text="Please wait..." />
 		<Exec WorkingDirectory="$(SpaRoot)" Command="npm run build" ContinueOnError="true">
@@ -49,16 +47,17 @@
 	<ItemGroup Condition="$(Configuration) =='Release'">
 		<Content Include="$(DistFolder)" CopyToOutputDirectory="Always"></Content>
 	</ItemGroup>
-	<ItemGroup>
-		<Folder Include="Model\" />
-	</ItemGroup>
-	<ItemGroup>
+	<!--Package for in debug mode-->
+	<ItemGroup Label="ForDebugMode" Condition="$(ModeBuild)=='Debug'">
 		<PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="6.0.11" />
+	</ItemGroup>
+	<!--General-->
+	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="6" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.5">
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-			<PrivateAssets>all</PrivateAssets>
+			<PrivateAssets>all</PrivateAssets> 
 		</PackageReference>
 		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />

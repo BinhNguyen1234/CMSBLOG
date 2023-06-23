@@ -52,6 +52,7 @@ namespace dotnet_vite_vuejs
                 app.UseSpa(spa =>
                 {
                     spa.Options.DefaultPageStaticFileOptions = ClientApp;
+
                 });
             });
 #endif
